@@ -1,0 +1,9 @@
+#! /bin/bash
+hadoop jar streaming.jar \
+  -input beetles \
+  -output beetles-count \
+  -mapper word-count-mapper.rb \
+  -reducer word-count-reducer.rb \
+  -file word-count-mapper.rb \
+  -file word-count-reducer.rb \
+  -numReduceTasks 3

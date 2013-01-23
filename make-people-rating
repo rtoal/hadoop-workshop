@@ -1,0 +1,10 @@
+#! /bin/bash
+hadoop jar streaming.jar \
+  -input films-basic \
+  -input people \
+  -output people-rating-counts \
+  -mapper people-rating-mapper.rb \
+  -reducer people-rating-reducer.rb \
+  -file people-rating-mapper.rb \
+  -file people-rating-reducer.rb \
+  -numReduceTasks 10

@@ -1,0 +1,7 @@
+#! /bin/bash
+hadoop jar streaming.jar \
+  -input films-basic \
+  -output person-index \
+  -mapper person-index-mapper.rb \
+  -file person-index-mapper.rb \
+  -numReduceTasks 0
